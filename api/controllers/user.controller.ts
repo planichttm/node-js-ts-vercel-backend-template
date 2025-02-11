@@ -18,6 +18,9 @@ export class UserController {
         metadata: { userId }
       });
 
+      if (!supabase) {
+        throw new Error('Supabase client is not initialized');
+      }
       const { error: authError } = await supabase.auth.admin.deleteUser(userId);
       if (authError) {
         logger.error('Failed to delete user authentication', {
