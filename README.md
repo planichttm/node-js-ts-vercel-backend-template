@@ -117,8 +117,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Mount Routes
-app.use('/health', healthRouter);
-app.use('/user', userRouter);
+app.use('/api/health', healthRouter);
+app.use('/api/user', userRouter);
 
 // Start the listener only if this module is executed directly (i.e., locally)
 if (require.main === module) {
